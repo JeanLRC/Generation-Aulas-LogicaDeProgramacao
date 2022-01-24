@@ -1,0 +1,190 @@
+/*Para 
+ * 2- Desenvolver um sistema que efetue a soma de todos os números ímpares que são
+múltiplos de três e que se encontram no conjunto dos números de 1 até 500.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro x, soma=0
+
+		para (x=1; x <= 500;x++)
+		{
+			se(x % 2 != 0 e x % 3 == 0)
+			{
+				escreva("\n"+x)
+				soma += x
+			}		
+		}
+		escreva("\nA soma dos números entre 1 e 500 é: "+soma)
+	}
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*Enquanto
+ * 2- Obtenha um número digitado pelo usuário e repita a operação de multiplicar ele por
+três (imprimindo o novo valor) até que ele seja maior do que 100. Ex.: se o usuário
+digita 5, deveremos observar na tela a seguinte sequência: 5 15 45 135.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro x
+
+		escreva("Digite um número: ")
+		leia(x)
+		enquanto(x <= 100)
+		{
+			x*=3
+			escreva("\n"+x)
+		}
+		escreva("\nFim do Programa")
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/* Enquanto
+ * 1- Elaborar um programa que efetue a leitura sucessiva de valores numéricos e
+apresente no final o total do somatório, a média e o total de valores lidos. O programa
+deve fazer as leituras dos valores enquanto o usuário estiver fornecendo valores
+positivos. Ou seja, o programa deve parar quando o usuário fornecer um valor
+negativo.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro x=0, soma=0, cont=0,media
+		escreva("Se desejar sair do progama digite um número negativo!\n")
+		enquanto( x >= 0)
+		{
+			
+			escreva("Digite um número: ")
+			leia(x)
+			se(x >= 0)
+			{
+				soma += x
+				cont++
+			}
+			
+		}
+		media = soma / cont
+		escreva("\nO total da soma de todos os números informados é: "+soma)
+		escreva("\nA média foi: "+media)
+		escreva("\nNo total foram digitados "+cont+" números")
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/* Faca Enquanto
+ * 2- Faça um programa que pegue um número do teclado e calcule a soma de todos os
+números de 1 até ele. Ex.: o usuário entra 7, o programa vai mostrar 28, pois
+1+2+3+4+5+6+7=28.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro n,x=1,soma=0
+		
+		escreva("Digite um número: ")
+		leia(n)
+		
+		faca
+		{
+			soma = soma + x
+			x++
+		}enquanto(x <= n)
+				escreva("\nA soma de todos os números até "+n+" é "+soma)
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/* Para
+ * 1- A prefeitura de uma cidade fez uma pesquisa entre 20 de seus habitantes,
+coletando dados sobre o salário e número de filhos. A prefeitura deseja saber:  
+a) média do salário da população;
+b) média do número de filhos;
+c) maior salário;
+d) percentual de pessoas com salário até R$100,00.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		real sal,medSal,maiorSal=0.0,medFil,somaSal=0.0, percSalA100
+		inteiro x,numf,somf=0,salA100=0
+		para(x = 1; x <= 20 ;x++)
+		{
+			escreva("Digite seu salário: R$")
+			leia(sal)
+
+			somaSal +=sal
+
+			escreva("Quantos filhos tem? ")
+			leia(numf)
+			somf +=numf
+
+			se(sal >= maiorSal)
+			{
+				maiorSal = sal
+			}
+			se(sal <= 100)
+			{
+				salA100++
+			}
+		limpa()
+		}
+		percSalA100 = (salA100 * 100) / 20
+		medSal = somaSal / 20
+		medFil = somf / 20
+		escreva("A média dos salário é: R$"+medSal)
+		escreva("\nA média de filhos é: "+medFil)
+		escreva("\nO maior salário é: R$"+maiorSal)
+		escreva("\nA porcentagem de salários abaixo de R$100.00 é: "+percSalA100+"%")
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 1- Faça um programa que mostre uma contagem na tela de 233 a 456, só que
+contando de 3 em 3 quando estiver entre 300 e 400 e de 5 em 5 quando não estiver.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro n=233
+		
+		faca
+		{
+			escreva(n+"\n")
+			n+=5
+			escreva(n+"\n")
+		}enquanto(n<=300)
+		faca
+		{
+			n+=3
+			escreva(n+"\n")
+		}enquanto(n>=300 e n<= 400)
+		faca
+		{
+			n+=5
+			escreva(n+"\n")
+		}enquanto(n>400 e n<=456)
+
+	}
+	
+}

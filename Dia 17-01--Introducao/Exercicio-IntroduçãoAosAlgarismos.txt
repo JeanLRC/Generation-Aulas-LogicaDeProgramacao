@@ -1,0 +1,97 @@
+
+/*1. Faça um sistema que leia a idade de uma pessoa expressa em anos, meses e
+dias e mostre-a expressa apenas em dias.*/
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro idadeAnos, idadeMeses, idadeDias, finDias
+
+		escreva("Digite sua idade em anos: ")
+		leia(idadeAnos)
+		escreva("\nQuantos meses? ")
+		leia(idadeMeses)
+		escreva("\nQuantos dias: ")
+		leia(idadeDias)
+		finDias = (idadeAnos*365)+(idadeMeses * 30) + idadeDias
+		escreva("\nSua idade em dias é: "+finDias)
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/* 3. Faça um sistema que leia o tempo de duração de um evento em uma fábrica
+expressa em segundos e mostre-o expresso em horas, minutos e segundos.*/
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro segundos, horas, minutos, segFin
+			
+		escreva("Qual a duração do evento (em segundos): ")
+		leia(segundos)
+
+		horas = segundos / 3600
+		minutos = (segundos % 3600) / 60
+		segFin =(segundos % 3600) % 60
+		
+
+		escreva("O evento durou: "+horas+" Horas "+minutos+" Minutos "+segFin+" Segundos")
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*2. Faça um sistema que leia a idade de uma pessoa expressa em dias e mostre-a
+expressa em anos, meses e dias.*/
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro idadeAnos, idadeMeses, idadeDias,finDias
+		
+		escreva("Digite sua idade em dias: ")
+		leia(finDias)
+		idadeAnos = finDias / 365
+		idadeMeses = (finDias % 365) / 30
+		idadeDias = (finDias % 365) % 30
+		escreva("Sua idade em Anos, meses e dias é: "+idadeAnos+" Anos "+idadeMeses+" Meses "+idadeDias+" Dias")
+	}
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*Escreva um sistema que leia três números inteiros e positivos (A, B, C) e
+calcule a seguinte expressão: D = (R + S) / 2 , onde R = (A + B)² e S = (B + C)²
+*/
+
+programa
+{
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio()
+	{
+		inteiro A, B, C
+		real R, S, D
+	
+		escreva("Digite um número: ")
+		leia(A)
+		escreva("\nDigite mais um número: ")
+		leia(B)
+		escreva("\nDigite o ultimo número: ")
+		leia(C)
+
+		R = mat.potencia(A + B, 2)
+		S = mat.potencia(B + C, 2)
+
+		D = (R + S)/2
+		limpa()
+		escreva("O resultado é: "+D )
+	}
+}

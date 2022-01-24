@@ -1,0 +1,291 @@
+/*
+ * 1) João, homem de bem, comprou um microcomputador para controlar o rendimento diário
+de seu trabalho. Toda vez que ele traz um peso de tomate maior que o estabelecido pelo
+regulamento do estado de São Paulo (50 quilos) deve pagar um multa de R$ 4,00 por quilo
+excedente. João precisa que você faça um sistema que leia a variável P (peso de tomates) e
+verifique se há excesso. Se houver, gravar na variável E (Excesso) e na variável M o valor
+da multa que João deverá pagar. Caso contrário mostrar tais variáveis com o conteúdo
+ZERO.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		real Multa , Peso , Excesso
+
+		escreva("Quantos quilos de tomate trouxe: ")
+		leia(Peso)
+
+		Excesso = Peso - 50
+		Multa = Excesso * 4.00
+		se(Peso > 50.00)
+		{
+			escreva("O peso passou de 50 quilos.\nA multa será de: "+Multa+" Reais")
+		}
+		senao
+		{
+			escreva("O peso não passou de 50 quilos.")
+		}
+	}
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 3) Desenvolva um sistema em que:
+Leia 4 (quatro) números;
+Calcule o quadrado de cada um;
+Se o valor resultante do quadrado do terceiro for &gt;= 1000, imprima-o e finalize;
+Caso contrário, imprima os valores lidos e seus respectivos quadrados.
+ */
+programa
+{
+	inclua biblioteca Matematica
+ --> mat
+	
+	funcao inicio()
+	{
+		real n1,n2,n3,n4,qn1,qn2,qn3,qn4
+		escreva("Digite quatro números: ")
+		leia(n1,n2,n3,n4)
+
+		qn1 = mat.potencia(n1, 2)
+		qn2 = mat.potencia(n2, 2)
+		qn3 = mat.potencia(n3, 2)
+		qn4 = mat.potencia(n4, 2)
+
+		se(qn3 >= 1000)
+		{
+			limpa()
+			escreva("O quadrado de ",n3," é ",qn3)
+		}
+		senao
+		{
+			escreva("O quadrado de ", n1, " é ",qn1)
+			escreva("\nO quadrado de ", n2, " é ",qn2)
+			escreva("\nO quadrado de ", n3, " é ",qn3)
+			escreva("\nO quadrado de ", n4, " é ",qn4)
+		}
+	}
+
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 4) Faça um sistema que leia um número inteiro e mostre uma mensagem indicando se este
+número é par ou ímpar, e se é positivo ou negativo.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro N,ParImp
+
+		escreva("Digite um número: ")
+		leia(N)
+
+		se(N % 2 == 0)
+		{
+			escreva(N, " É um número par")
+		}
+		senao
+		{
+			escreva(N, " É um número impar")
+		}
+		se(N >= 0)
+		{
+			escreva(" Positivo")
+		}
+		senao
+		{
+			escreva(" Negativo")
+		}
+		
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+/*
+ * 6) Elabore um sistema que dada a idade de um nadador classifique-o em uma das seguintes
+categorias:
+Infantil A = 5 a 7 anos
+Infantil B = 8 a 11 anos
+Juvenil A = 12 a 13 anos
+Juvenil B = 14 a 17 anos
+Adultos = Maiores de 18 anos
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro idade
+
+		escreva("Digite sua idade: ")
+		leia(idade)
+
+		se(idade >= 18)
+		{
+			escreva("Adulto")
+		}
+		senao se(idade>=14)
+		{
+			escreva("Juvenil B")
+		}
+		senao se(idade >= 12)
+		{
+			escreva("Juvenil A")
+		}
+		senao se(idade >= 8)
+		{
+			escreva("Infantil B")
+		}
+		senao se(idade >=5)
+		{
+			escreva("Infantil A")
+		}
+		senao
+		{
+			escreva("Jovem demais")
+		}
+	}
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 8) Construa um sistema para ler uma variável numérica N e imprimi-la somente se a mesma
+for maior que 100, caso contrário imprimi-la com o valor zero.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro N
+
+		escreva("Digite um número: ")
+		leia(N)
+
+		se(N > 100)
+		{
+			escreva(N)
+		}
+		senao
+		{
+			N = 0
+			escreva(N)
+		}
+	}
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 7) Receber valores de base e altura de um triângulo e verificar se são valores válidos
+(positivos maiores que zero). Em caso afirmativo, calcular a área do triângulo.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro base, h, A
+
+		escreva("Digite o valor de Base: ")
+		leia(base)
+		escreva("Digite a áltura: ")
+		leia(h)
+
+		se(base > 0 e h > 0)
+		{
+			A = (base*h)/2
+			escreva("A área do triangulo é: "+A)		
+		}
+		senao
+		{
+			escreva("Impossivel fazer o calculo.")
+		}
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 5) A Secretaria de Meio Ambiente que controla o índice de poluição mantém 3 grupos de
+indústrias que são altamente poluentes do meio ambiente. O índice de poluição aceitável
+varia de 0,05 até 0,25. Se o índice sobe para 0,3 as indústrias do 1º grupo são intimadas a
+suspenderem suas atividades, se o índice crescer para 0,4 as industrias do 1º e 2º grupo são
+intimadas a suspenderem suas atividades, se o índice atingir 0,5 todos os grupos devem ser
+notificados a paralisarem suas atividades. Faça um sistema que leia o índice de poluição
+medido e emita a notificação adequada aos diferentes grupos de empresas.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		real IndPol
+
+		escreva("Digite o índice de poluição atual: ")
+		leia(IndPol)
+
+		se(IndPol < 0.4 e IndPol >= 0.3 )
+		{
+			escreva("Industrias do 1º Grupo, Suspendam suas atividades")
+		}
+		senao se(IndPol < 0.5 e IndPol >= 0.4)
+		{
+			escreva("Industrias do 1º e 2º Grupo, suspendam suas atividades")
+		}
+		senao se(IndPol >= 0.5)
+		{
+			escreva("Todos os grupos devem suspender suas atividades")
+		}
+		senao
+		{
+			escreva("Sem problemas")
+		}
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 2) Elabore um sistema que leia as variáveis C e N, respectivamente código e número de
+horas trabalhadas de um operário. E calcule o salário sabendo-se que ele ganha R$ 10,00
+por hora. Quando o número de horas exceder a 50 calcule o excesso de pagamento
+armazenando-o na variável E, caso contrário zerar tal variável. A hora excedente de
+trabalho vale R$ 20,00. No final do processamento imprimir o salário total e o salário
+excedente.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro C, N, HE
+		real Salario = 0.00, Excesso = 0.00,SalarioT
+
+		escreva("Digite seu código: ")
+		leia(C)
+		escreva("\nQuantas horas foram trabalhadas: ")
+		leia(N)
+
+		se (N > 50)
+		{
+			HE = N - 50
+			Excesso = HE * 20.00
+			Salario = (50 * 10.00) + Excesso
+		}
+		senao
+		{
+			Salario = N * 10.00
+			Excesso = 0.00
+		}
+		escreva("O salário total foi de: R$"+Salario+"\nE o salário excedente foi de: R$"+Excesso)
+	}
+}

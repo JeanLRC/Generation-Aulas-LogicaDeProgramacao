@@ -1,0 +1,202 @@
+	/*
+ * 1. Faça um programa que crie um vetor por leitura com 5 valores de pontuação de uma
+atividade e o escreva em seguida. Encontre após a maior pontuação e a apresente.
+ */
+ 
+programa
+{
+	inclua biblioteca Matematica
+ --> mat
+	
+	funcao inicio()
+	{
+		inteiro vet[5],x, maior=0
+
+		para(x=0;x<5;x++)
+		{
+			escreva("Digite um número: ")
+			leia(vet[x])
+			maior = mat.maior_numero(maior, vet[x])
+		}
+		escreva("\nO maior número informado foi: "+maior)
+	}
+}
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+ /*
+ * 4. Crie um programa que receba valores do usuário para preencher uma matriz 3X3, e
+em seguida, exiba a soma dos valores dela e a soma dos valores da primeira
+diagonal, ou seja, diagonal principal.
+ */
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro M[3][3],x,y,soma=0, somaDiag=0
+
+		para(x=0;x<3;x++)
+		{
+			para(y=0;y<3;y++)
+			{
+				escreva("Digite um número: ")
+				leia(M[x][y])
+				soma += M[x][y]
+				se(x == y)
+				{
+					somaDiag += M[x][y]
+				}
+			}
+			
+		}
+		escreva("A soma de toda a matriz é: "+soma)
+		escreva("\nA soma da diagonal é: "+somaDiag)
+	}
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 2. Um dado é lançado 10 vezes e o valor correspondente é anotado. Faça um programa
+que gere um vetor com os lançamentos, escreva esse vetor. A seguir determine e
+imprima a média aritmética dos lançamentos, contabilize e apresente também
+quantas foram as ocorrências da maior pontuação.
+ */
+ 
+programa
+{
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio()
+	{
+		inteiro vet[10], x, soma=0, maior=0,maior2=0, vMaior=0
+		real media
+
+		para(x=0;x<10;x++)
+		{
+			escreva("\nO dado caiu em qual número: ")
+			leia(vet[x])
+			maior = mat.maior_numero(maior, vet[x])
+			soma +=vet[x]
+			limpa()
+		}
+		para(x=0;x<10;x++)
+		{
+			se(vet[x] == maior)
+			{
+				vMaior++
+			}
+			escreva("\t"+vet[x])
+		}
+		escreva("Os valores em que o dado caiu foram:\n ")
+		media = soma / 10.0
+		escreva("\n\nA média é proxima à:  "+media)
+		escreva("\nO maior valor se repetiu "+vMaior+" Vez.\n")
+	}
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+ * 3. Escreve um programa que lê duas matrizes N1 (4,6) e N2(4,6) e cria:
+a) Uma matriz M1 cujos elementos serão as somas dos elementos de mesma posição
+das matrizes N1 e N2;
+b) Uma matriz M2 cujos elementos serão as diferenças dos elementos de mesma
+posição das matrizes N1 e N2.
+ */
+ 
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro N1[4][6]
+, N2[4][6],M1[4][6],M2[4][6],linha ,coluna
+
+		//Montando a matriz N1
+		escreva("Montando a 1ª matriz:\n")
+		para(linha=0;linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				escreva("Digite o valor da linha "+linha+" | Coluna "+coluna+": ")
+				leia(N1[linha][coluna])
+			}
+			limpa()
+		}
+		
+		//Montando a matriz N2
+		escreva("Montando a 2ª matriz:\n")
+		para(linha = 0; linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				escreva("Digite o valor da linha "+linha+" | Coluna "+coluna+": ")
+				leia(N2[linha][coluna])
+			}
+			limpa()
+		}
+		
+		//Montando a matiz M1 
+		para(linha=0; linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				M1[linha][coluna]= N1[linha][coluna] + N2[linha][coluna]
+			}
+		}
+
+		//Montando a matriz M2
+		para(linha=0;linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				M2[linha][coluna] = N1[linha][coluna]-N2[linha][coluna]
+			}
+		}
+			
+		//Escrevendo as matrizes
+		escreva("\n_____________________Matriz N1\n")
+		para(linha=0;linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				escreva("\t"+N1[linha][coluna])
+			}
+			
+			escreva("\n1")
+		}
+		escreva("\n_____________________Matriz N2\n")
+		para(linha=0;linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				escreva("\t"+N2[linha][coluna])
+			}
+			
+			escreva("\n")
+		}
+		escreva("\n_____________________Matriz M1\n")
+		para(linha=0;linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				escreva("\t"+M1[linha][coluna])
+			}
+			
+			escreva("\n")
+		}
+		escreva("\n_____________________Matriz M2\n")
+		para(linha=0;linha<4;linha++)
+		{
+			para(coluna=0;coluna<6;coluna++)
+			{
+				escreva("\t"+M2[linha][coluna])
+			}
+			
+			escreva("\n")
+		}
+		
+	}
+}

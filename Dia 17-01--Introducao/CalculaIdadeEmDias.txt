@@ -1,0 +1,20 @@
+/*1. Faça um sistema que leia a idade de uma pessoa expressa em anos, meses e
+dias e mostre-a expressa apenas em dias.*/
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro idadeAnos, idadeMeses, idadeDias, finDias
+
+		escreva("Digite sua idade em anos: ")
+		leia(idadeAnos)
+		escreva("\nQuantos meses? ")
+		leia(idadeMeses)
+		escreva("\nQuantos dias: ")
+		leia(idadeDias)
+		finDias = (idadeAnos*365)+(idadeMeses * 30) + idadeDias
+		escreva("\nSua idade em dias é: "+finDias)
+	}
+}

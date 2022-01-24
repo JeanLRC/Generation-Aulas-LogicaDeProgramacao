@@ -1,0 +1,35 @@
+/*
+ * 2) Elabore um sistema que leia as variáveis C e N, respectivamente código e número de
+horas trabalhadas de um operário. E calcule o salário sabendo-se que ele ganha R$ 10,00
+por hora. Quando o número de horas exceder a 50 calcule o excesso de pagamento
+armazenando-o na variável E, caso contrário zerar tal variável. A hora excedente de
+trabalho vale R$ 20,00. No final do processamento imprimir o salário total e o salário
+excedente.
+ */
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro C, N, HE
+		real Salario = 0.00, Excesso = 0.00,SalarioT
+
+		escreva("Digite seu código: ")
+		leia(C)
+		escreva("\nQuantas horas foram trabalhadas: ")
+		leia(N)
+
+		se (N > 50)
+		{
+			HE = N - 50
+			Excesso = HE * 20.00
+			Salario = (50 * 10.00) + Excesso
+		}
+		senao
+		{
+			Salario = N * 10.00
+			Excesso = 0.00
+		}
+		escreva("O salário total foi de: R$"+Salario+"\nE o salário excedente foi de: R$"+Excesso)
+	}
+}

@@ -1,0 +1,22 @@
+/*7. Um sistema de equações lineares do tipo: 
+ * 			ax + by = c	
+ * 			dx + ey = f, Pode ser resolvido segundo mostrado abaixo:
+ * 			x = (c.e - b.f) / (a.e - b.d) |  y = (a.f - c.d) / (a.e - b.d)
+*/
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro a, b, c, d, ee, f, x, y
+
+		escreva("Digite seis valores diferentes: ")
+		leia(a, b, c, d, ee, f)
+
+		x = ((c * ee) - (b * f)) / ((a * ee) - (b * d))
+		y = ((a * f) - (c * d)) / ((a * ee) - (b * d))
+
+		escreva("O valor de X é: "+x+"\nE o valor de Y é: "+y)
+	}
+}
